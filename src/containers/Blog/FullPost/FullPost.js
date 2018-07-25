@@ -20,12 +20,11 @@ class FullPost extends Component {
         }
     }
 
-    
     deletePostHandler = () => {
         axios.delete('/posts/' + this.props.id)
-        .then(response => {
-            console.log(response);
-        }) ;
+            .then(response => {
+                console.log(response);
+            });
     }
 
     render () {
@@ -39,7 +38,7 @@ class FullPost extends Component {
                     <h1>{this.state.loadedPost.title}</h1>
                     <p>{this.state.loadedPost.body}</p>
                     <div className="Edit">
-                        <button className="Delete" onClick={this.deletePostHandler} >Delete</button>
+                        <button onClick={this.deletePostHandler} className="Delete">Delete</button>
                     </div>
                 </div>
 
